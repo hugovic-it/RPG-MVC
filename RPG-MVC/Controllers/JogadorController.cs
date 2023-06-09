@@ -45,17 +45,25 @@ namespace RPG_MVC.Controllers
 
             return View(jogador);
         }
-        public ActionResult VerJogador()
+        public ActionResult BuscarJogador()
+        {
+            return View();
+        }
+        public ActionResult VerJogador(int JogadorId)
         {
             Jogador jogador = null;
-            try{
-                jogador = _context.Jogadores.FirstOrDefault(x => x.JogadorId == 1);
-            }catch (Exception e) {}
-            if (jogador is null){
+            try
+            {
+                jogador = _context.Jogadores.FirstOrDefault(x => x.JogadorId == JogadorId);
+            }
+            catch (Exception e) { }
+            if (jogador is null)
+            {
                 return View();
                 //return RedirectToAction("Index");
             }
-            else {
+            else
+            {
                 return View(jogador);
             }
         }
@@ -63,20 +71,67 @@ namespace RPG_MVC.Controllers
         {
             //System.Console.WriteLine("Informações dos jogadores: ");
             List<Jogador> jogadores;
-            try { 
+            try
+            {
                 jogadores = _context.Jogadores.ToList();
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 //System.Console.WriteLine(e.Message);
                 return View("Index");
             }
-            
+
             //foreach (Jogador jogador in jogadores){System.Console.WriteLine(jogador.ToString());}
 
             return View(jogadores);
         }
+        public ActionResult ModificarJogador()
+        {
+            return View();
+        }
+        public ActionResult ModificandoJogador(int JogadorId)
+        {
 
+            Jogador jogador = _context.Jogadores.FirstOrDefault(x => x.JogadorId == JogadorId);
 
+            if (jogador is null)
+            {
+                return View("Index");
+            }
 
+            return View(jogador);
+
+        }
+        public ActionResult ModificadoJogador(Jogador jogador)
+        {
+            if (jogador is null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            _context.Jogadores.Update(jogador);
+            _context.SaveChanges();
+
+            return View(jogador);
+        }
+
+        public ActionResult RemoverJogador()
+        {
+            return View();
+        }
+
+        public ActionResult RemovendoJogador(int JogadorId)
+        {
+
+            var jogador = _context.Jogadores.SingleOrDefault(x => x.JogadorId == JogadorId);
+            if(jogador is null)
+            {
+                return Redirect("Index");
+            }
+            
+            _context.Jogadores.Remove(jogador);
+            _context.SaveChanges();
+            return View(jogador);
+        }
     }
 }
