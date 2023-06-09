@@ -1,0 +1,33 @@
+﻿
+@{
+}
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>HP</th>
+            <th>MP</th>
+            <th>Forca</th>
+            <th>Defesa</th>
+            <th>Experiencia</th>
+            <th>Moedas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var objeto in Model)
+        {
+            <tr>
+                <td>@objeto.JogadorId</td>
+                <td>@objeto.Nome</td>
+                <td>@objeto.HpMax</td>
+                <td>@objeto.MpMax</td>
+                <td>@objeto.Forca</td>
+                <td>@objeto.Defesa</td>
+                <td>@objeto.Experiencia</td>
+                <td>@objeto.Moedas</td>
+            </tr>
+        }
+    </tbody>
+</table>
