@@ -10,6 +10,7 @@ namespace RPG_MVC.Context
         }
 
         public DbSet<Jogador>? Jogadores { get; set; }
+        public DbSet<Arma>? Armas { get; set; }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {optionsBuilder.UseSqlite("Data Source=banco.db;Cache=Shared");}
     }
 }
