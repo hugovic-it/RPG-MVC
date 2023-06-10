@@ -25,7 +25,7 @@ namespace RPG_MVC.Controllers
             return View();
         }
 
-        public ActionResult PersistirJogador(Jogador jogador)
+        public ActionResult CadastrandoJogador(Jogador jogador)
         {
             try
             {
@@ -45,11 +45,11 @@ namespace RPG_MVC.Controllers
 
             return View(jogador);
         }
-        public ActionResult BuscarJogador()
+        public ActionResult VisualizarJogador()
         {
             return View();
         }
-        public ActionResult VerJogador(int JogadorId)
+        public ActionResult VisualizandoJogador(int JogadorId)
         {
             Jogador jogador = null;
             try
@@ -67,7 +67,7 @@ namespace RPG_MVC.Controllers
                 return View(jogador);
             }
         }
-        public ActionResult VerTodosJogadores()
+        public ActionResult VisualizarTodosJogadores()
         {
             //System.Console.WriteLine("Informações dos jogadores: ");
             List<Jogador> jogadores;
