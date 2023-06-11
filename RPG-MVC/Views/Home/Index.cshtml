@@ -3,6 +3,51 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Olár</h1>  <br /> <hr />
 </div>
+
+
+<div><h3>Menu Jogador</h3></div>
+<div>
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="Index">Inicial Jogador</a>
+    </button>
+
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="CadastrarJogador">Cadastrar Jogador</a>
+    </button>
+
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="ModificarJogador">Modificar Jogador</a>
+    </button>
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="RemoverJogador">Remover Jogador</a>
+    </button>
+
+    <button type="button" class="btn btn-primary disabled">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="PersistirJogador">Persistir Jogador</a>
+    </button>
+
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="VisualizarJogador">Visualizar Jogador</a>
+    </button>
+
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Jogador" asp-action="VisualizarTodosJogadores">Todos Jogadores</a>
+    </button>
+</div>
+<hr />
+
+<div> <h3>Menu Arma</h3></div>
+<div>
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Arma" asp-action="Index">Inicial Arma</a>
+    </button>
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Arma" asp-action="AdicionarArma">Adicionar Arma</a>
+    </button>
+    <button type="button" class="btn btn-primary">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Arma" asp-action="VisualizarTodasArmas">Visualizar Todas Armas</a>
+    </button>
+</div>
+<hr />

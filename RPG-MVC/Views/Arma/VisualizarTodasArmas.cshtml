@@ -1,0 +1,24 @@
+﻿@{
+}
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ataque</th>
+            <th>Descricao</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var objeto in Model)
+        {
+            <tr>
+                <td>@objeto.ArmaId</td>
+                <td>@objeto.Nome</td>
+                <td>@objeto.Ataque</td>
+                <td>@objeto.Descricao</td>
+            </tr>
+        }
+    </tbody>
+</table>
