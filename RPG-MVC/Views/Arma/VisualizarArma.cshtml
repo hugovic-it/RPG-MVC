@@ -1,4 +1,4 @@
-﻿@model RPG_MVC.Models.Jogador
+﻿@model RPG_MVC.Models.Arma
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,15 +10,15 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="VisualizandoJogador">
+        <form asp-action="VisualizandoArma">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="JogadorId" class="control-label"></label>
-                <input asp-for="JogadorId" class="form-control" />
-                <span asp-validation-for="JogadorId" class="text-danger"></span>
+                <label asp-for="ArmaId" class="control-label"></label>
+                <input asp-for="ArmaId" class="form-control" />
+                <span asp-validation-for="ArmaId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Buscar Jogador" class="btn btn-primary" />
+                <input type="submit" value="Buscar Arma" class="btn btn-primary" />
             </div>
         </form>
     </div>

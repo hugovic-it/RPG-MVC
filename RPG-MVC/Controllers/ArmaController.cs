@@ -24,10 +24,12 @@ namespace RPG_MVC.Controllers
         }
         public ActionResult AdicionandoArma(Arma arma)
         {
-            if (arma == null) {
+            if (arma == null)
+            {
                 return View("Index");
             }
-            try{
+            try
+            {
                 _context.Armas.Add(arma);
                 _context.SaveChanges();
             }
@@ -51,8 +53,28 @@ namespace RPG_MVC.Controllers
             return View(armas);
         }
 
+        public ActionResult VisualizarArma()
+        {
+            return View();
+        }
+        public ActionResult VisualizandoArma(int ArmaId)
+        {
+            Arma arma = null;
+            try
+            {
+                arma = _context.Armas.FirstOrDefault(x => x.ArmaId == ArmaId);
+            }
+            catch (Exception e) { }
+            if (arma is null)
+            {
+                return View();
+            }
+            else
+            {
+                return View(arma);
+            }
+        }
 
 
-        
     }
 }
