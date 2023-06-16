@@ -74,7 +74,52 @@ namespace RPG_MVC.Controllers
                 return View(arma);
             }
         }
+        public ActionResult ModificarArma()
+        {
+            return View();
+        }
+        public ActionResult ModificandoArma(int ArmaId)
+        {
 
+            Arma arma = _context.Armas.FirstOrDefault(x => x.ArmaId == ArmaId);
 
+            if (arma is null)
+            {
+                return View("Index");
+            }
+
+            return View(arma);
+
+        }
+        public ActionResult ModificadoArma(Arma arma)
+        {
+            if (arma is null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            _context.Armas.Update(arma);
+            _context.SaveChanges();
+
+            return View(arma);
+        }
+        public ActionResult RemoverArma()
+        {
+            return View();
+        }
+
+        public ActionResult RemovendoArma(int ArmaId)
+        {
+
+            var arma = _context.Armas.SingleOrDefault(x => x.ArmaId == ArmaId);
+            if (arma is null)
+            {
+                return Redirect("Index");
+            }
+
+            _context.Armas.Remove(arma);
+            _context.SaveChanges();
+            return View(arma);
+        }
     }
 }
