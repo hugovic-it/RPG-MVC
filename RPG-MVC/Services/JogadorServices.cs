@@ -27,10 +27,10 @@ namespace RPG_MVC.Services
             {
                 //Arma nula
                 return;
-                //throw new Exception("arma is null.");
+                //throw new Exception("jogador is null.");
             }
 
-            if (jogador.ArmaId != 0)
+            if (jogador.ArmaId is not null)
             {
                 var armaEquipada = contexto.Armas.First(x => x.ArmaId == jogador.ArmaId);
                 jogador.Forca = jogador.Forca - armaEquipada.Ataque; //removendo o status da arma que sera removida
