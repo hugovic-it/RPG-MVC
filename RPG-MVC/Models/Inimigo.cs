@@ -23,6 +23,7 @@ namespace RPG_MVC.Models
         public int Defesa { get; set; }
         public int Experiencia { get; set; }
         public int Moedas { get; set; }
+        public string? Imagem { get; set; }
 
         public override string ToString()
         {

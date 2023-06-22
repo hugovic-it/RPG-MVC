@@ -1,4 +1,5 @@
 ﻿using RPG_MVC.Context;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace RPG_MVC.Models
@@ -17,9 +18,10 @@ namespace RPG_MVC.Models
         public int Defesa { get; set; }
         public int Experiencia { get; set; }
         public int Moedas { get; set; }
-        //public int? EquipamentoArmaId { get; set; }
-        //[JsonIgnore]
-        //public EquipamentoArma? EquipamentoArma { get; set; }
+        public int? ArmaId { get; set; }  //referencia
+        public Arma? Arma { get; set; }   //objeto 
+        [StringLength(400)]
+        public string? Imagem { get; set; }
         //public int? EquipamentoArmaduraId { get; set; }
         //[JsonIgnore]
         //public EquipamentoArmadura? EquipamentoArmadura { get; set; }
