@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RPG_MVC.Context;
+using RPG_MVC.Interfaces;
+using RPG_MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options => {  
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddTransient<IJogadorService,JogadorService>(); //DI ?
 
 var app = builder.Build();
 

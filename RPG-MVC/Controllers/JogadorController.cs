@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RPG_MVC.Context;
+using RPG_MVC.Interfaces;
 using RPG_MVC.Models;
 
 namespace RPG_MVC.Controllers
@@ -9,10 +10,21 @@ namespace RPG_MVC.Controllers
     public class JogadorController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IJogadorService _jogadorService;
 
-        public JogadorController(AppDbContext context)
+        public JogadorController(AppDbContext context, IJogadorService jogadorService)
         {
             _context = context;
+            _jogadorService = jogadorService;
+        }
+        public ActionResult EquipandoArmaJogador (int jogadorId, int armaId)
+        {
+            _jogadorService.EquiparArma(jogadorId, armaId);
+            return View();
+        }
+        public ActionResult EquiparArmaJogador()
+        { //view com o form
+            return View();
         }
 
         public ActionResult Index()

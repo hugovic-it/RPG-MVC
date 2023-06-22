@@ -14,6 +14,7 @@ namespace RPG_MVC.Models
         public string? Descricao { get; set; }
         [Required(ErrorMessage = "O campo Ataque não pode ser nulo.")]
         public int Ataque { get; set; }
+        [StringLength(400)]
         public string? Imagem { get; set; }
 
         public override string ToString()
