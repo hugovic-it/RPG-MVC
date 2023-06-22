@@ -20,7 +20,8 @@ namespace RPG_MVC.Controllers
         public ActionResult EquipandoArmaJogador (int jogadorId, int armaId)
         {
             _jogadorService.EquiparArma(jogadorId, armaId);
-            return View();
+            var jogador = _context.Jogadores.FirstOrDefault(x => x.JogadorId == jogadorId);
+            return View(jogador);
         }
         public ActionResult EquiparArmaJogador()
         { //view com o form

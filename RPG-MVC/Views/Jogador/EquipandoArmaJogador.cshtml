@@ -3,3 +3,36 @@
 *@
 @{
 }
+
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>HP</th>
+            <th>MP</th>
+            <th>Forca</th>
+            <th>Defesa</th>
+            <th>Experiencia</th>
+            <th>Moedas</th>
+            <th>ArmaID</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>@Model.JogadorId</td>
+            <td>@Model.Nome</td>
+            <td>@Model.HpMax</td>
+            <td>@Model.MpMax</td>
+            <td>@Model.Forca</td>
+            <td>@Model.Defesa</td>
+            <td>@Model.Experiencia</td>
+            <td>@Model.Moedas</td>
+            <td>@Model.ArmaId</td>
+        </tr>
+
+    </tbody>
+</table>
