@@ -1,9 +1,9 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@{
+    var jogadorInicial = ViewBag.JogadorInicial;
+    var jogadorFinal = ViewBag.JogadorFinal;
 
+    var absd = "as" ;
+}
 
 <table class="table table-striped table-bordered">
     <thead class="thead-dark">
@@ -23,15 +23,26 @@
     <tbody>
 
         <tr>
-            <td>@Model.JogadorId</td>
-            <td>@Model.Nome</td>
-            <td>@Model.HpMax</td>
-            <td>@Model.MpMax</td>
-            <td>@Model.Forca</td>
-            <td>@Model.Defesa</td>
-            <td>@Model.Experiencia</td>
-            <td>@Model.Moedas</td>
-            <td>@Model.ArmaId</td>
+            <td>@jogadorInicial.JogadorId</td>
+            <td>@jogadorInicial.Nome</td>
+            <td>@jogadorInicial.HpMax</td>
+            <td>@jogadorInicial.MpMax</td>
+            <td>@jogadorInicial.Forca</td>
+            <td>@jogadorInicial.Defesa</td>
+            <td>@jogadorInicial.Experiencia</td>
+            <td>@jogadorInicial.Moedas</td>
+            <td>@jogadorInicial.ArmaId</td>
+        </tr>
+        <tr>
+            <td>@jogadorFinal.JogadorId</td>
+            <td>@jogadorFinal.Nome</td>
+            <td>@jogadorFinal.HpMax</td>
+            <td>@jogadorFinal.MpMax</td>
+            <td>@jogadorFinal.Forca</td>
+            <td>@jogadorFinal.Defesa</td>
+            <td>@jogadorFinal.Experiencia</td>
+            <td>@jogadorFinal.Moedas</td>
+            <td>@jogadorFinal.ArmaId</td>
         </tr>
 
     </tbody>

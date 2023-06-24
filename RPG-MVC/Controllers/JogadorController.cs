@@ -19,9 +19,23 @@ namespace RPG_MVC.Controllers
         }
         public ActionResult EquipandoArmaJogador (int jogadorId, int armaId)
         {
+            
+            //recebendo o valor antes da modificação
+            var jogadorInicial = _context.Jogadores.SingleOrDefault(x => x.JogadorId == jogadorId);
+            ViewBag.JogadorInicial = jogadorInicial; //teste ViewBag
+            
             _jogadorService.EquiparArma(jogadorId, armaId);
-            var jogador = _context.Jogadores.FirstOrDefault(x => x.JogadorId == jogadorId);
-            return View(jogador);
+
+            //recebendo o valor apos a modificação
+            var jogadorFinal = _context.Jogadores.FirstOrDefault(x => x.JogadorId == jogadorId);
+            ViewBag.JogadorFinal = jogadorFinal;  //teste ViewBag
+
+            //após a execução do EquiparArma(), tanto o jogadorInicial
+            //quanto o jogadorFinal tem os seus respectivos valores
+            //alterados/atualizados.
+            // //problema com a fonte de dados(contexto) ?
+
+            return View();
         }
         public ActionResult EquiparArmaJogador()
         { //view com o form
